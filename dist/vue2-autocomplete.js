@@ -185,12 +185,15 @@ if (false) {(function () {
 //
 //
 //
+//
 
 
 /*! Copyright (c) 2016 Naufal Rabbani (http://github.com/BosNaufal)
 * Licensed Under MIT (http://opensource.org/licenses/MIT)
 *
 * Vue 2 Autocomplete @ Version 0.0.1
+*
+* Forked from Vue2-autocomplete by http://github.com/BosNaufal
 *
 */
 
@@ -668,6 +671,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       rawName: "v-model",
       value: (_vm.type),
       expression: "type"
+    }, {
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required'),
+      expression: "'required'"
     }],
     ref: "input",
     class: ((_vm.getClassName('input')) + " autocomplete-input"),

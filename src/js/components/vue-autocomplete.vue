@@ -15,6 +15,7 @@
       @keydown="handleKeyDown"
       @focus="handleFocus"
       autocomplete="off"
+      v-validate="'required'"
     />
 
     <div
@@ -52,6 +53,8 @@
   * Licensed Under MIT (http://opensource.org/licenses/MIT)
   *
   * Vue 2 Autocomplete @ Version 0.0.1
+  *
+  * Forked from Vue2-autocomplete by http://github.com/BosNaufal
   *
   */
 
