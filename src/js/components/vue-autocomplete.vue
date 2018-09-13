@@ -15,7 +15,8 @@
       @keydown="handleKeyDown"
       @focus="handleFocus"
       autocomplete="off"
-      v-validate="'required'"
+      v-validate="{ required: true, regex: /^((\d{5}-\d{4})|(\d{5})|(\d{3}))$/}"
+      maxlength="10"
     />
 
     <div
@@ -26,6 +27,7 @@
         <li
           v-for="(data, i) in json"
           :class="activeClass(i)"
+          :key="i"
         >
           <a
             href="#"
