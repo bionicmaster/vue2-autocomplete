@@ -199,7 +199,7 @@ if (false) {(function () {
 */
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-
+    inject: ['$validator'],
     props: {
         id: String,
         name: String,
@@ -312,7 +312,7 @@ if (false) {(function () {
                 var type = this.type,
                     anchor = this.anchor;
 
-                var regex = new RegExp("" + type, 'i');
+                var regex = new RegExp('' + type, 'i');
                 var filtered = newVal.filter(function (item) {
                     var found = item[anchor].search(regex) !== -1;
                     return found;
@@ -329,8 +329,8 @@ if (false) {(function () {
             var classes = this.classes,
                 className = this.className;
 
-            if (classes[part]) return "" + classes[part];
-            return className ? className + "-" + part : '';
+            if (classes[part]) return '' + classes[part];
+            return className ? className + '-' + part : '';
         },
 
 
@@ -450,7 +450,7 @@ if (false) {(function () {
         },
         activeClass: function activeClass(i) {
             var focusClass = i === this.focusList ? 'focus-list' : '';
-            return "" + focusClass;
+            return '' + focusClass;
         },
         selectList: function selectList(data) {
             // Deep clone of the original object
@@ -481,10 +481,10 @@ if (false) {(function () {
             var encode = function encode(val) {
                 return _this3.encodeParams ? encodeURIComponent(val) : val;
             };
-            var params = this.param + "=" + encode(val);
+            var params = this.param + '=' + encode(val);
             if (this.customParams) {
                 Object.keys(this.customParams).forEach(function (key) {
-                    params += "&" + key + "=" + encode(_this3.customParams[key]);
+                    params += '&' + key + '=' + encode(_this3.customParams[key]);
                 });
             }
             return params;
@@ -507,7 +507,7 @@ if (false) {(function () {
             var params = this.composeParams(val);
             // Init Ajax
             var ajax = new XMLHttpRequest();
-            ajax.open('GET', this.url + "?" + params, true);
+            ajax.open('GET', this.url + '?' + params, true);
             this.composeHeader(ajax);
             // Callback Event
             ajax.addEventListener('progress', function (data) {
