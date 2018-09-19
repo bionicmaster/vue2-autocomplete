@@ -15,6 +15,7 @@
                 @focus="handleFocus"
                 autocomplete="off"
                 v-validate="validate"
+                :data-vv-as="fieldAliasComputed"
                 maxlength="10"
         />
 
@@ -151,7 +152,18 @@
             onAjaxLoaded: Function,
             onShouldGetData: Function,
 
-            validate: Object
+            validate: Object,
+
+            fieldAlias: {
+                type: String,
+                default: ''
+            }
+        },
+
+        computed: {
+            fieldAliasComputed () {
+                return this.fieldAlias !== '' ? this.fieldAlias : this.id
+            }
         },
 
         data () {

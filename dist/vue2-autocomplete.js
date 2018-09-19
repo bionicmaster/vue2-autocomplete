@@ -187,6 +187,7 @@ if (false) {(function () {
 //
 //
 //
+//
 
 
 /*! Copyright (c) 2016 Naufal Rabbani (http://github.com/BosNaufal)
@@ -292,7 +293,18 @@ if (false) {(function () {
         onAjaxLoaded: Function,
         onShouldGetData: Function,
 
-        validate: Object
+        validate: Object,
+
+        fieldAlias: {
+            type: String,
+            default: ''
+        }
+    },
+
+    computed: {
+        fieldAliasComputed: function fieldAliasComputed() {
+            return this.fieldAlias !== '' ? this.fieldAlias : this.id;
+        }
     },
 
     data: function data() {
@@ -688,6 +700,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "placeholder": _vm.placeholder,
       "name": _vm.name,
       "autocomplete": "off",
+      "data-vv-as": _vm.fieldAliasComputed,
       "maxlength": "10"
     },
     domProps: {
